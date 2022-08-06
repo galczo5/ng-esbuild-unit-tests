@@ -1,0 +1,92 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/unit-tests/src",
+  "prefix": "unit-tests",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/unit-tests",
+        "index": "apps/unit-tests/src/index.html",
+        "main": "apps/unit-tests/src/main.ts",
+        "polyfills": "apps/unit-tests/src/polyfills.ts",
+        "tsConfig": "apps/unit-tests/tsconfig.app.json",
+        "assets": [
+          "apps/unit-tests/src/favicon.ico",
+          "apps/unit-tests/src/assets"
+        ],
+        "styles": ["apps/unit-tests/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/unit-tests/src/environments/environment.ts",
+              "with": "apps/unit-tests/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "unit-tests:build:production"
+        },
+        "development": {
+          "browserTarget": "unit-tests:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "unit-tests:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/unit-tests/**/*.ts",
+          "apps/unit-tests/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/unit-tests"],
+      "options": {
+        "jestConfig": "apps/unit-tests/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
