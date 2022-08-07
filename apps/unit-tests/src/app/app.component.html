@@ -1,1 +1,10 @@
-<unit-tests-nx-welcome></unit-tests-nx-welcome>
+<div class="container py-5">
+  <unit-tests-header></unit-tests-header>
+
+  <div class="d-flex gap-2">
+    <unit-tests-create-form (itemCreated)="itemCreated($event)"></unit-tests-create-form>
+    <unit-tests-list class="flex-grow-1"
+                     [items]="getItems()"></unit-tests-list>
+  </div>
+
+</div>

@@ -16,7 +16,10 @@
           "apps/unit-tests/src/favicon.ico",
           "apps/unit-tests/src/assets"
         ],
-        "styles": ["apps/unit-tests/src/styles.css"],
+        "styles": [
+          "apps/unit-tests/src/styles.css",
+          "apps/unit-tests/src/bootstrap.min.css"
+        ],
         "scripts": []
       },
       "configurations": {

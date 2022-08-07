@@ -1,0 +1,18 @@
+<div class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-brand">
+      Unit tests app
+    </div>
+    <div class="nav-item">
+      <input #inputElement
+             id="searchInput"
+             [value]="filterValue"
+             placeholder="Type to filter items..."
+             style="width: 300px;"
+             class="mx-2"/>
+      <button id="searchButton" (click)="setFilter(inputElement.value)">
+        Search
+      </button>
+    </div>
+  </div>
+</div>

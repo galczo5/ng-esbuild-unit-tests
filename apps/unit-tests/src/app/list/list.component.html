@@ -1,0 +1,6 @@
+<div class="d-flex flex-column gap-2 border border-2 border-primary mt-2 p-2">
+  <unit-tests-list-item *ngFor="let item of filteredItems" [item]="item"></unit-tests-list-item>
+  <div *ngIf="filteredItems.length === 0">
+    List empty
+  </div>
+</div>
