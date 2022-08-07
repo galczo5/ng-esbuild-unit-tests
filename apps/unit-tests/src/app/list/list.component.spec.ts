@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ListComponent } from './list.component';
+import {ListComponent} from './list.component';
 import {FilterService} from "../filter.service";
 import {Observable, of} from "rxjs";
 import {Injectable} from "@angular/core";
@@ -25,7 +25,7 @@ describe('ListComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ListComponent, ListItemComponent],
       providers: [
-        { provide: FilterService, useClass: MockFilterService }
+        {provide: FilterService, useClass: MockFilterService}
       ]
     }).compileComponents();
 

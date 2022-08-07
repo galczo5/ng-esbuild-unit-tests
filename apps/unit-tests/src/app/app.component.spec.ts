@@ -1,5 +1,5 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import {TestBed} from '@angular/core/testing';
+import {AppComponent} from './app.component';
 import {HeaderComponent} from "./header/header.component";
 import {CreateFormComponent} from "./create-form/create-form.component";
 import {ListComponent} from "./list/list.component";

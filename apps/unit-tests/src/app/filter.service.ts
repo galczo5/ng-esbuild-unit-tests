@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {distinctUntilChanged, Observable, ReplaySubject} from "rxjs";
 import {FilterInitialValueService} from "./filter-initial-value.service";
 

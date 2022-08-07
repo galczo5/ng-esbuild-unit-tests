@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { FilterInitialValueService } from './filter-initial-value.service';
+import {FilterInitialValueService} from './filter-initial-value.service';
 
 describe('FilterInitialValueService', () => {
   let service: FilterInitialValueService;

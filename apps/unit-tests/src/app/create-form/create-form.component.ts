@@ -7,7 +7,7 @@ import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/c
 })
 export class CreateFormComponent {
 
-  @ViewChild('inputElement', { read: ElementRef })
+  @ViewChild('inputElement', {read: ElementRef})
   inputElement?: ElementRef;
 
   @Output()

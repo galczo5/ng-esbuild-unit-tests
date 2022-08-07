@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/unit-tests",
         "index": "apps/unit-tests/src/index.html",
@@ -84,7 +86,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/unit-tests"],
+      "outputs": [
+        "coverage/apps/unit-tests"
+      ],
       "options": {
         "jestConfig": "apps/unit-tests/jest.config.ts",
         "passWithNoTests": true

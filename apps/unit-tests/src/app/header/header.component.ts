@@ -13,14 +13,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private readonly destroy$: Subject<void> = new Subject<void>();
 
-  constructor(private readonly filterService: FilterService) {}
+  constructor(private readonly filterService: FilterService) {
+  }
 
   ngOnInit(): void {
-      this.filterService.getFilter()
-        .pipe(takeUntil(this.destroy$))
-        .subscribe(value => {
-          this.filterValue = value;
-        });
+    this.filterService.getFilter()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(value => {
+        this.filterValue = value;
+      });
   }
 
   ngOnDestroy(): void {

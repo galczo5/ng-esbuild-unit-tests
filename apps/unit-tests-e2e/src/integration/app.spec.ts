@@ -1,4 +1,4 @@
-import { getGreeting } from '../support/app.po';
+import {getGreeting} from '../support/app.po';
 
 describe('unit-tests', () => {
   beforeEach(() => cy.visit('/'));

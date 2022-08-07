@@ -5,12 +5,12 @@
     </div>
     <div class="nav-item">
       <input #inputElement
-             id="searchInput"
              [value]="filterValue"
+             class="mx-2"
+             id="searchInput"
              placeholder="Type to filter items..."
-             style="width: 300px;"
-             class="mx-2"/>
-      <button id="searchButton" (click)="setFilter(inputElement.value)">
+             style="width: 300px;"/>
+      <button (click)="setFilter(inputElement.value)" id="searchButton">
         Search
       </button>
     </div>

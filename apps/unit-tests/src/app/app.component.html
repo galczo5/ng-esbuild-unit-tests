@@ -3,8 +3,8 @@
 
   <div class="d-flex gap-2">
     <unit-tests-create-form (itemCreated)="itemCreated($event)"></unit-tests-create-form>
-    <unit-tests-list class="flex-grow-1"
-                     [items]="getItems()"></unit-tests-list>
+    <unit-tests-list [items]="getItems()"
+                     class="flex-grow-1"></unit-tests-list>
   </div>
 
 </div>

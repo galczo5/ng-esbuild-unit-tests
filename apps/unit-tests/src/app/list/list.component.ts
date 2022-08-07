@@ -17,7 +17,8 @@ export class ListComponent implements OnChanges, OnInit, OnDestroy {
   private readonly destroy$: Subject<void> = new Subject<void>();
   private readonly items$: Subject<Array<string>> = new Subject<Array<string>>();
 
-  constructor(private readonly filterService: FilterService) {}
+  constructor(private readonly filterService: FilterService) {
+  }
 
   ngOnInit(): void {
 
