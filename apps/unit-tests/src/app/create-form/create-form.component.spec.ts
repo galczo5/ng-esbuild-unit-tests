@@ -1,48 +1,46 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
 import {CreateFormComponent} from './create-form.component';
-// import {take} from "rxjs";
+import {take} from "rxjs";
+
+const numberOfIterations = 10000
 
 describe('CreateFormComponent', () => {
-  let component: CreateFormComponent;
-  let fixture: ComponentFixture<CreateFormComponent>;
 
-  beforeEach(async () => {
-    // await TestBed.configureTestingModule({
-    //   declarations: [CreateFormComponent],
-    // }).compileComponents();
-    //
-    // fixture = TestBed.createComponent(CreateFormComponent);
-    // component = fixture.componentInstance;
-    // fixture.detectChanges();
-  });
+    it('TestBed - should emit value if value is not empty', async () => {
+      for (let i = 0; i < numberOfIterations; i++) {
+        await TestBed.configureTestingModule({ declarations: [CreateFormComponent] }).compileComponents();
+        const fixture = TestBed.createComponent(CreateFormComponent);
+        const component = fixture.componentInstance;
+        fixture.detectChanges();
 
-  it('should create', () => {
-    // expect(component).toBeTruthy();
-  });
+        const value = 'Test';
 
-  it('should emit value if value is not empty', () => {
-    // const value = 'Test';
-    //
-    // component.itemCreated
-    //   .pipe(take(1))
-    //   .subscribe(v => {
-    //     expect(v).toEqual(value);
-    //     done();
-    //   });
-    //
-    // component.createItem(value);
-  });
+        const promise = component.itemCreated
+          .pipe(take(1))
+          .toPromise();
 
-  it('should not emit value if value is empty', () => {
-    // const value = '';
-    // let valueEmitted = false
-    //
-    // component.itemCreated
-    //   .pipe(take(1))
-    //   .subscribe(() => valueEmitted = true);
-    //
-    // component.createItem(value);
-    // expect(valueEmitted).toBeFalsy();
-  });
+        component.createItem(value);
+
+        const result = await promise;
+        expect(result).toEqual(value);
+        await TestBed.resetTestingModule();
+      }
+    });
+
+    it('No TestBed - should emit value if value is not empty', async () => {
+      for (let i = 0; i < numberOfIterations; i++) {
+        const component = new CreateFormComponent();
+        const value = 'Test';
+        const promise = component.itemCreated
+          .pipe(take(1))
+          .toPromise();
+
+        component.createItem(value);
+
+        const result = await promise;
+        expect(result).toEqual(value);
+      }
+    });
+
 });
